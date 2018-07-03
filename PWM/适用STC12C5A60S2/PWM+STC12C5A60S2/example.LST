@@ -1,0 +1,42 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:11:30 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <PWM.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          void delay(unsigned int x){
+   8   1              uint i,j;
+   9   1              for(i=0;i<x;i++)
+  10   1                      for(j=0;j<1000;j++);
+  11   1      }
+  12          
+  13          void main()
+  14          {
+  15   1              PWM_Init();
+  16   1              PWM_Set(0,0x40);
+  17   1              PWM_Set(1,0x80);
+  18   1              while(1);
+  19   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    106    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

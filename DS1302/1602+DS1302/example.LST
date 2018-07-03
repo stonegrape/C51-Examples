@@ -1,0 +1,63 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:05:30 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <1602.h>
+   3          #include <DS1302.h>
+   4          
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          //sbit key = P2^4;
+   8          
+   9          void delay(unsigned int x){
+  10   1              uint i,j;
+  11   1              for(i=0;i<x;i++)
+  12   1                      for(j=0;j<1000;j++);
+  13   1      }
+  14          
+  15          void main()
+  16          {
+  17   1              LCD_Init();
+  18   1              LCD_Clear();
+  19   1              DS1302_Init();
+  20   1              DS1302_SetTime(12,2,29,23,59,0,4);
+  21   1          while(1)
+  22   1          {
+  23   2              //      if(key==0){
+  24   2              //              delay(10);
+  25   2              //              if(key==0){
+  26   2                                      LCD_Clear();
+  27   2                                      DS1302_GetTime();
+  28   2                                      LCD_Write_String(0,0,"time:20  -  -  ");
+  29   2                                      LCD_Write_String(3,1,"  :  :");
+  30   2                                      LCD_Write_Char(7,0,DS1302_nian);
+  31   2                                      LCD_Write_Char(10,0,DS1302_yue);
+  32   2                                      LCD_Write_Char(13,0,DS1302_ri);
+  33   2                                      LCD_Write_Char(3,1,DS1302_shi);
+  34   2                                      LCD_Write_Char(6,1,DS1302_fen);
+  35   2                                      LCD_Write_Char(9,1,DS1302_miao);
+  36   2                                      delay(50);
+  37   2              //              }
+  38   2              //      }
+  39   2          }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    737    ----
+   CONSTANT SIZE    =     23    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      7      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

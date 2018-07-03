@@ -1,0 +1,86 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\C语言程序\1常用头文件\PWM(STC12C5A60S2)\PWM\example.uv2
+Project File Date:  09/28/2015
+
+<h2>Output:</h2>
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+连接 ...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?EXAMPLE
+Program Size: data=10.1 xdata=0 code=121
+创建 HEX 文件 "example" ...
+"example" - 0 个错误, 1 个警告。
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+D:\KEIL\C51\INC\REG52.H(13): 错误 C231: 'P0': redefinition
+D:\KEIL\C51\INC\REG52.H(14): 错误 C231: 'P1': redefinition
+D:\KEIL\C51\INC\REG52.H(15): 错误 C231: 'P2': redefinition
+D:\KEIL\C51\INC\REG52.H(16): 错误 C231: 'P3': redefinition
+D:\KEIL\C51\INC\REG52.H(17): 错误 C231: 'PSW': redefinition
+D:\KEIL\C51\INC\REG52.H(18): 错误 C231: 'ACC': redefinition
+D:\KEIL\C51\INC\REG52.H(19): 错误 C231: 'B': redefinition
+D:\KEIL\C51\INC\REG52.H(20): 错误 C231: 'SP': redefinition
+D:\KEIL\C51\INC\REG52.H(21): 错误 C231: 'DPL': redefinition
+D:\KEIL\C51\INC\REG52.H(22): 错误 C231: 'DPH': redefinition
+D:\KEIL\C51\INC\REG52.H(23): 错误 C231: 'PCON': redefinition
+D:\KEIL\C51\INC\REG52.H(24): 错误 C231: 'TCON': redefinition
+D:\KEIL\C51\INC\REG52.H(25): 错误 C231: 'TMOD': redefinition
+D:\KEIL\C51\INC\REG52.H(26): 错误 C231: 'TL0': redefinition
+D:\KEIL\C51\INC\REG52.H(27): 错误 C231: 'TL1': redefinition
+D:\KEIL\C51\INC\REG52.H(28): 错误 C231: 'TH0': redefinition
+D:\KEIL\C51\INC\REG52.H(29): 错误 C231: 'TH1': redefinition
+D:\KEIL\C51\INC\REG52.H(30): 错误 C231: 'IE': redefinition
+D:\KEIL\C51\INC\REG52.H(31): 错误 C231: 'IP': redefinition
+D:\KEIL\C51\INC\REG52.H(32): 错误 C231: 'SCON': redefinition
+D:\KEIL\C51\INC\REG52.H(33): 错误 C231: 'SBUF': redefinition
+D:\KEIL\C51\INC\REG52.H(45): 错误 C231: 'CY': redefinition
+D:\KEIL\C51\INC\REG52.H(46): 错误 C231: 'AC': redefinition
+D:\KEIL\C51\INC\REG52.H(47): 错误 C231: 'F0': redefinition
+D:\KEIL\C51\INC\REG52.H(48): 错误 C231: 'RS1': redefinition
+D:\KEIL\C51\INC\REG52.H(49): 错误 C231: 'RS0': redefinition
+D:\KEIL\C51\INC\REG52.H(50): 错误 C231: 'OV': redefinition
+D:\KEIL\C51\INC\REG52.H(51): 错误 C231: 'P': redefinition
+D:\KEIL\C51\INC\REG52.H(54): 错误 C231: 'TF1': redefinition
+D:\KEIL\C51\INC\REG52.H(55): 错误 C231: 'TR1': redefinition
+D:\KEIL\C51\INC\REG52.H(56): 错误 C231: 'TF0': redefinition
+D:\KEIL\C51\INC\REG52.H(57): 错误 C231: 'TR0': redefinition
+D:\KEIL\C51\INC\REG52.H(58): 错误 C231: 'IE1': redefinition
+D:\KEIL\C51\INC\REG52.H(59): 错误 C231: 'IT1': redefinition
+D:\KEIL\C51\INC\REG52.H(60): 错误 C231: 'IE0': redefinition
+D:\KEIL\C51\INC\REG52.H(61): 错误 C231: 'IT0': redefinition
+D:\KEIL\C51\INC\REG52.H(64): 错误 C231: 'EA': redefinition
+D:\KEIL\C51\INC\REG52.H(66): 错误 C231: 'ES': redefinition
+D:\KEIL\C51\INC\REG52.H(67): 错误 C231: 'ET1': redefinition
+D:\KEIL\C51\INC\REG52.H(68): 错误 C231: 'EX1': redefinition
+D:\KEIL\C51\INC\REG52.H(69): 错误 C231: 'ET0': redefinition
+D:\KEIL\C51\INC\REG52.H(70): 错误 C231: 'EX0': redefinition
+D:\KEIL\C51\INC\REG52.H(74): 错误 C231: 'PS': redefinition
+D:\KEIL\C51\INC\REG52.H(75): 错误 C231: 'PT1': redefinition
+D:\KEIL\C51\INC\REG52.H(76): 错误 C231: 'PX1': redefinition
+D:\KEIL\C51\INC\REG52.H(77): 错误 C231: 'PT0': redefinition
+D:\KEIL\C51\INC\REG52.H(78): 错误 C231: 'PX0': redefinition
+D:\KEIL\C51\INC\REG52.H(91): 错误 C231: 'SM0': redefinition
+D:\KEIL\C51\INC\REG52.H(92): 错误 C231: 'SM1': redefinition
+D:\KEIL\C51\INC\REG52.H(93): 错误 C231: 'SM2': redefinition
+D:\KEIL\C51\INC\REG52.H(94): 错误 C231: 'REN': redefinition
+D:\KEIL\C51\INC\REG52.H(95): 错误 C231: 'TB8': redefinition
+D:\KEIL\C51\INC\REG52.H(96): 错误 C231: 'RB8': redefinition
+D:\KEIL\C51\INC\REG52.H(97): 错误 C231: 'TI': redefinition
+D:\KEIL\C51\INC\REG52.H(98): 错误 C231: 'RI': redefinition
+目标未产生
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+连接 ...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?EXAMPLE
+Program Size: data=10.1 xdata=0 code=121
+创建 HEX 文件 "example" ...
+"example" - 0 个错误, 1 个警告。

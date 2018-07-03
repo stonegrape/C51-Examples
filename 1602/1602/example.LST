@@ -1,0 +1,50 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/07/2015 19:41:13 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <1602.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          void delay(unsigned int x){
+   8   1              uint i,j;
+   9   1              for(i=0;i<x;i++)
+  10   1                      for(j=0;j<1000;j++);
+  11   1      }
+  12          
+  13          void main()
+  14          {
+  15   1              uchar k=234;
+  16   1              LCD_Init();
+  17   1              LCD_Clear();            
+  18   1              LCD_Write_String(0,0,"Data is:");
+  19   1              LCD_Write_String(8,0,"aa");
+  20   1              LCD_Write_Char(7,1,k);
+  21   1              LCD_Write_String(10,1,"aa");
+  22   1              LCD_Write_Char(0,1,k);
+  23   1              LCD_Write_String(12,0,"aa");
+  24   1              LCD_Write_String(14,0,"aa");
+  25   1              LCD_Write_Char(4,1,k);
+  26   1              while(1);
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    389    ----
+   CONSTANT SIZE    =     12    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

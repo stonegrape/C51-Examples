@@ -1,0 +1,58 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:06:33 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <NRF905.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          sbit LED=P1^0;
+   8          
+   9          void delay(unsigned int x){
+  10   1              uint i,j;
+  11   1              for(i=0;i<x;i++)
+  12   1                      for(j=0;j<1000;j++);
+  13   1      }
+  14          
+  15          void main(){
+  16   1              LED=1;
+  17   1              NRF905_Init();
+  18   1              while(1){
+  19   2                      NRF905_data[0]=0x00;
+  20   2                      NRF905_Rx();
+  21   2                      if(NRF905_data[0]==0x11){
+  22   3                              LED=0;
+  23   3                              delay(1000);
+  24   3                              delay(1000);
+  25   3                              delay(1000);
+  26   3                              delay(1000);
+  27   3                              LED=1;
+  28   3                              delay(1000);
+  29   3                              delay(1000);
+  30   3                              delay(1000);
+  31   3                              delay(1000);
+  32   3                      }
+  33   2                      
+  34   2              }
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    372    ----
+   CONSTANT SIZE    =     12    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       8
+   IDATA SIZE       =     11    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,73 @@
+#include <STC12C5A.h>
+#include <KEY4X4.h>
+
+#define uchar unsigned char
+#define uint unsigned int
+
+sbit LED1=P2^0;
+sbit LED2=P2^1;
+
+void delay(unsigned int x){
+ 	uint i,j;
+	for(i=0;i<x;i++)
+		for(j=0;j<1000;j++);
+}
+
+void main()
+{
+	while(1){
+		LED1=1;
+		LED2=1;
+		KEY4X4_arr[2][3]=0;
+		KEY4X4_arr[3][4]=0;
+		KEY4X4_onekey();
+		switch(KEY4X4){
+			case 0x11:{
+				LED1=0;
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				break;
+			}
+			case 0x22:{
+				LED1=0;
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				break;
+			}
+			case 0x33:{
+				LED1=0;
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				break;
+			}
+			case 0x44:{
+				LED1=0;
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				delay(1000);
+				break;
+			}
+			default:{
+				LED1=1;
+				break;
+			}
+		}
+		KEY4X4_many();
+		if(KEY4X4_arr[2][3]==1/*&&KEY4X4_arr[3][4]==1*/){	
+			LED2=0;
+			delay(1000);
+			delay(1000);
+			delay(1000);
+			delay(1000);
+			delay(1000);
+			delay(1000);
+		}
+	}
+}

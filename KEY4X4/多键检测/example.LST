@@ -1,0 +1,74 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/07/2015 19:10:02 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <KEY4X4.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          sbit LED=P2^0;
+   8          
+   9          void delay(unsigned int x){
+  10   1              uint i,j;
+  11   1              for(i=0;i<x;i++)
+  12   1                      for(j=0;j<1000;j++);
+  13   1      }
+  14          
+  15          void main()
+  16          {
+  17   1              while(1){
+  18   2                      LED=1;
+  19   2                      KEY4X4_many();
+  20   2                      if(KEY1_3==1){
+  21   3                              LED=0;
+  22   3                              delay(1000);
+  23   3                              delay(1000);
+  24   3                              delay(1000);
+  25   3                              delay(1000);
+  26   3                              delay(1000);
+  27   3                              LED=1;
+  28   3                      }
+  29   2                      if((KEY1_1==1)&&(KEY1_2==1)&&(KEY2_2==1)){
+  30   3                              LED=0;
+  31   3                              delay(1000);
+  32   3                              delay(1000);
+  33   3                              delay(1000);
+  34   3                              delay(1000);
+  35   3                              delay(1000);
+  36   3                              LED=1;
+  37   3                      }
+  38   2                      if((KEY3_1==1)&&(KEY4_2==1)&&(KEY3_3==1)){
+  39   3                              LED=0;
+  40   3                              delay(1000);
+  41   3                              delay(1000);
+  42   3                              delay(1000);
+  43   3                              delay(1000);
+  44   3                              delay(1000);
+  45   3                              LED=1;
+  46   3                      }
+  47   2                      delay(20);
+  48   2              }
+  49   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    801    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V8.06   EXAMPLE                                                               10/07/2015 19:10:02 PAGE 2   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     17       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

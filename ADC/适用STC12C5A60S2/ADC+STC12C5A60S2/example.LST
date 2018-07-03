@@ -1,0 +1,103 @@
+C51 COMPILER V8.06   EXAMPLE                                                               11/26/2015 11:11:40 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <ADC.h>
+   3          #include <12864.h>
+   4          
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          
+   8          void delay(unsigned int x){
+   9   1              uint i,j;
+  10   1              for(i=0;i<x;i++)
+  11   1                      for(j=0;j<1000;j++);
+  12   1      }
+  13          
+  14          void main()
+  15          {
+  16   1              unsigned int distance[5];
+  17   1              int i;
+  18   1              LCD12864_Init();
+  19   1              while(1){
+  20   2                      ADC_Get(0);
+  21   2                      distance[4]=ADC_value%10;
+  22   2                      distance[3]=ADC_value/10%10;
+  23   2                      distance[2]=ADC_value/100%10;
+  24   2                      distance[1]=ADC_value/1000%10;
+  25   2                      distance[0]=ADC_value/10000%10;
+  26   2                      LCD12864_Clear();
+  27   2                      LCD12864_String(0,0,"µçÑ¹£º");
+  28   2                      for(i=0;i<5;i++){
+  29   3                              switch(distance[i]){
+  30   4                                      case 0:{
+  31   5                                              LCD12864_String(0,3+i,"0 ");
+  32   5                                              break;
+  33   5                                      }
+  34   4                                      case 1:{
+  35   5                                              LCD12864_String(0,3+i,"1 ");
+  36   5                                              break;
+  37   5                                      }
+  38   4                                      case 2:{
+  39   5                                              LCD12864_String(0,3+i,"2 ");
+  40   5                                              break;
+  41   5                                      }
+  42   4                                      case 3:{
+  43   5                                              LCD12864_String(0,3+i,"3 ");
+  44   5                                              break;
+  45   5                                      }
+  46   4                                      case 4:{
+  47   5                                              LCD12864_String(0,3+i,"4 ");
+  48   5                                              break;
+  49   5                                      }
+  50   4                                      case 5:{
+  51   5                                              LCD12864_String(0,3+i,"5 ");
+  52   5                                              break;
+  53   5                                      }
+  54   4                                      case 6:{
+  55   5                                              LCD12864_String(0,3+i,"6 ");
+C51 COMPILER V8.06   EXAMPLE                                                               11/26/2015 11:11:40 PAGE 2   
+
+  56   5                                              break;
+  57   5                                      }
+  58   4                                      case 7:{
+  59   5                                              LCD12864_String(0,3+i,"7 ");
+  60   5                                              break;
+  61   5                                      }
+  62   4                                      case 8:{
+  63   5                                              LCD12864_String(0,3+i,"8 ");
+  64   5                                              break;
+  65   5                                      }
+  66   4                                      case 9:{
+  67   5                                              LCD12864_String(0,3+i,"9 ");
+  68   5                                              break;
+  69   5                                      }
+  70   4                                      default:{
+  71   5                                              LCD12864_String(0,3+i,"0 ");
+  72   5                                              break;
+  73   5                                      }
+  74   4                              }       
+  75   3                      }
+  76   2                      delay(2000);
+  77   2              }
+  78   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1143    ----
+   CONSTANT SIZE    =     37    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      24
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,49 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:05:49 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <1602.h>
+   3          #include <HCSR04.h>
+   4          
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          
+   8          void delay(unsigned int x){
+   9   1              uint i,j;
+  10   1              for(i=0;i<x;i++)
+  11   1                      for(j=0;j<1000;j++);
+  12   1      }
+  13          
+  14          void main()
+  15          {
+  16   1              LCD_Init();
+  17   1              LCD_Clear();    
+  18   1          while(1)
+  19   1          {
+  20   2                      HCSR04_GetDistance();
+  21   2                      LCD_Clear();
+  22   2                      LCD_Write_String(0,0,"distance:");
+  23   2                      LCD_Write_Char(4,1,distance);
+  24   2                      delay(50);
+  25   2          }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    559    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,289 @@
+#define uint unsigned int
+#define uchar unsigned char
+
+#define KEY4X4_port P1       //定义矩阵键盘接在哪一组IO口上
+
+uchar KEY4X4=0x00;
+uint KEY4X4_arr[5][5]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+
+void KEY4X4_delay(int n){
+	int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<100;j++);
+	}	
+}
+
+void KEY4X4_onekey(){
+  uchar temp;
+  KEY4X4=0x00;
+  KEY4X4_port=0xfe;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xee:{
+          KEY4X4=0x11;
+          break;
+        }
+        case 0xde:{
+          KEY4X4=0x12;
+          break;
+        }
+        case 0xbe:{
+          KEY4X4=0x13;
+          break;
+        }
+        case 0x7e:{
+          KEY4X4=0x14;
+          break;
+        }
+        default:{
+        	KEY4X4=0xff;
+        	break;
+        }
+      }
+      while(temp!=0xf0){
+        temp=KEY4X4_port;
+        temp=temp&0xf0;
+      }
+    }
+  }
+  KEY4X4_port=0xfd;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xed:{
+          KEY4X4=0x21;
+          break;
+        }
+        case 0xdd:{
+          KEY4X4=0x22;
+          break;
+        }
+        case 0xbd:{
+          KEY4X4=0x23;
+          break;
+        }
+        case 0x7d:{
+          KEY4X4=0x24;
+          break;
+        }
+        default:{
+        	KEY4X4=0xff;
+        	break;
+        }
+      }
+      while(temp!=0xf0){
+        temp=KEY4X4_port;
+        temp=temp&0xf0;
+      }
+    }
+  }
+  KEY4X4_port=0xfb;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xeb:{
+          KEY4X4=0x31;
+          break;
+        }
+        case 0xdb:{
+          KEY4X4=0x32;
+          break;
+        }
+        case 0xbb:{
+          KEY4X4=0x33;
+          break;
+        }
+        case 0x7b:{
+          KEY4X4=0x34;
+          break;
+        }
+        default:{
+        	KEY4X4=0xff;
+        	break;
+        }
+      }
+      while(temp!=0xf0){
+        temp=KEY4X4_port;
+        temp=temp&0xf0;
+      }
+    }
+  }
+  KEY4X4_port=0xf7;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xe7:{
+          KEY4X4=0x41;
+          break;
+        }
+        case 0xd7:{
+          KEY4X4=0x42;
+          break;
+        }
+        case 0xb7:{
+          KEY4X4=0x43;
+          break;
+        }
+        case 0x77:{
+          KEY4X4=0x44;
+          break;
+        }
+        default:{
+        	KEY4X4=0xff;
+        	break;
+        }
+      }
+      while(temp!=0xf0){
+        temp=KEY4X4_port;
+        temp=temp&0xf0;
+      }
+    }
+  }
+}
+
+void KEY4X4_many(){
+  uchar temp;
+  KEY4X4_port=0xfe;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xee:{
+          KEY4X4_arr[1][1]=1;
+          break;
+        }
+        case 0xde:{
+          KEY4X4_arr[1][2]=1;
+          break;
+        }
+        case 0xbe:{
+          KEY4X4_arr[1][3]=1;
+          break;
+        }
+        case 0x7e:{
+          KEY4X4_arr[1][4]=1;
+          break;
+        }
+        default:{
+        	break;
+        }
+      }
+    }
+  }
+  KEY4X4_port=0xfd;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xed:{
+          KEY4X4_arr[2][1]=1;
+          break;
+        }
+        case 0xdd:{
+          KEY4X4_arr[2][2]=1;
+          break;
+        }
+        case 0xbd:{
+          KEY4X4_arr[2][3]=1;
+          break;
+        }
+        case 0x7d:{
+          KEY4X4_arr[2][4]=1;
+          break;
+        }
+        default:{
+        	break;
+        }
+      }
+    }
+  }
+  KEY4X4_port=0xfb;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xeb:{
+          KEY4X4_arr[3][1]=1;
+          break;
+        }
+        case 0xdb:{
+          KEY4X4_arr[3][2]=1;
+          break;
+        }
+        case 0xbb:{
+          KEY4X4_arr[3][3]=1;
+          break;
+        }
+        case 0x7b:{
+          KEY4X4_arr[3][4]=1;
+          break;
+        }
+        default:{
+        	break;
+        }
+      }
+    }
+  }
+  KEY4X4_port=0xf7;
+  temp=KEY4X4_port;
+  temp=temp&0xf0;
+  if(temp!=0xf0){
+    KEY4X4_delay(10);
+    if(temp!=0xf0){
+      temp=KEY4X4_port;
+      switch(temp){
+        case 0xe7:{
+          KEY4X4_arr[4][1]=1;
+          break;
+        }
+        case 0xd7:{
+          KEY4X4_arr[4][2]=1;
+          break;
+        }
+        case 0xb7:{
+          KEY4X4_arr[4][3]=1;
+          break;
+        }
+        case 0x77:{
+          KEY4X4_arr[4][4]=1;
+          break;
+        }
+        default:{
+        	break;
+        }
+      }
+    }
+  }
+  KEY4X4_port=0xf0;
+  temp=KEY4X4_port;
+  while(temp!=0xf0){
+    KEY4X4_port=0xf0;
+	temp=KEY4X4_port;
+  }
+}

@@ -1,0 +1,18 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\C语言程序\1常用头文件\NRF905\NRF905\发送\example.uv2
+Project File Date:  09/25/2015
+
+<h2>Output:</h2>
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+连接 ...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?NRF905_RX?EXAMPLE
+Program Size: data=33.0 xdata=0 code=774
+创建 HEX 文件 "example" ...
+"example" - 0 个错误, 1 个警告。

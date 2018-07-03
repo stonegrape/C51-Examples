@@ -1,0 +1,65 @@
+C51 COMPILER V9.52.0.0   EXAMPLE                                                           03/17/2016 10:02:28 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <UART.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          sbit key = P1^0;
+   8          
+   9          void delay(unsigned int x){
+  10   1        uint i,j;
+  11   1        for(i=0;i<x;i++)
+  12   1          for(j=0;j<1000;j++);
+  13   1      }
+  14          
+  15          void main(){
+  16   1        uchar i=0;
+  17   1        UART_Init();
+  18   1        while(1){
+  19   2          if(key==0){
+  20   3            delay(10);
+  21   3            if(key==0){
+  22   4              if(i==0){
+  23   5                i=1;
+  24   5              }else{
+  25   5                i=0;
+  26   5              }
+  27   4              while(key==0);
+  28   4              switch(i){
+  29   5                case 0:
+  30   5                  UART_String("19");
+  31   5                  break;
+  32   5                case 1:
+  33   5                  UART_String("222");
+  34   5                  break;
+  35   5                default:
+  36   5                  break;
+  37   5              }
+  38   4            }
+  39   3          }
+  40   2          delay(100);
+  41   2        }
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    178    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,18 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\MyClanguage\1常用头文件\KEY4X4\多键检测\example.uv2
+Project File Date:  09/29/2015
+
+<h2>Output:</h2>
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+连接 ...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEY4X4_SCAN?EXAMPLE
+Program Size: data=27.0 xdata=0 code=996
+创建 HEX 文件 "example" ...
+"example" - 0 个错误, 1 个警告。

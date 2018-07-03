@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\C语言程序\1常用头文件\DS1302\1602+DS1302\example.uv2
+Project File Date:  10/03/2015
+
+<h2>Output:</h2>
+创建目标 '目标 1'
+PA51汇编 STARTUP.A51 ...
+编译 example.c ...
+连接 ...
+Program Size: data=23.0 xdata=0 code=1089
+"example" - 0 个错误, 0 个警告。

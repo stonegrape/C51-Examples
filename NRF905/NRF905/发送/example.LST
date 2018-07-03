@@ -1,0 +1,43 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:06:24 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <NRF905.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          void delay(unsigned int x){
+   8   1              uint i,j;
+   9   1              for(i=0;i<x;i++)
+  10   1                      for(j=0;j<1000;j++);
+  11   1      }
+  12          
+  13          void main()
+  14          {
+  15   1              NRF905_Init();
+  16   1              while(1){
+  17   2                      NRF905_Tx(0x11,0,0,0);
+  18   2                      delay(10);
+  19   2              }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    353    ----
+   CONSTANT SIZE    =     12    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       8
+   IDATA SIZE       =     11    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

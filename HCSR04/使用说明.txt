@@ -1,0 +1,14 @@
+接线方式：VCC接正极，GND接地，Trig接P1.4，Echo接P1.3
+
+
+
+操作方式：DATA=HCSR04_GetDistance();    使用此函数得到距离值，并存于DATA中，
+                                        单位是mm。
+ 
+ 
+
+使用中断：T0定时器、ETO中断(interrupt 1)、TMOD|=0x01
+
+
+
+使用晶振：12M

@@ -1,0 +1,63 @@
+C51 COMPILER V8.06   EXAMPLE                                                               10/03/2015 01:04:48 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE EXAMPLE
+OBJECT MODULE PLACED IN example.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE example.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <STC12C5A.h>
+   2          #include <1602.h>
+   3          #include <AT24C02.h>
+   4          
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          
+   8          char code music[] = {
+   9          55,66,77,88,0x55,0x66,0x77,0x88
+  10          };
+  11          
+  12          void delay(unsigned int x){
+  13   1              uint i,j;
+  14   1              for(i=0;i<x;i++)
+  15   1                      for(j=0;j<1000;j++);
+  16   1      }
+  17          
+  18          void main()
+  19          {
+  20   1              LCD_Init();
+  21   1              LCD_Clear();
+  22   1              AT24C02_Init();
+  23   1          while(1)
+  24   1          {
+  25   2                      uchar add=0,k=0;
+  26   2                      LCD_Clear();
+  27   2                      LCD_Write_String(0,0,"Data is:");
+  28   2                      while(add!=sizeof(music)){
+  29   3                              AT24C02_Write(add+0x00,music[add]);
+  30   3                              add++;
+  31   3                      }
+  32   2                      add=0;
+  33   2                      while(add!=sizeof(music)){
+  34   3                              k=AT24C02_Read(add);
+  35   3                              LCD_Write_Char(4,1,k);
+  36   3                              add++;
+  37   3                              delay(1000);
+  38   3                      }
+  39   2          }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    617    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
